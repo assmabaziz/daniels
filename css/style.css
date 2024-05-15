@@ -1,0 +1,484 @@
+/*=================================================== Start Greneral Rules =====================================*/
+:root {
+  --bg-section: #f1f1f1;
+  --bg-icons: #f4f4f4;
+  --main-transition: 0.5s;
+  --color-text: #748182;
+  scroll-padding-top: 60px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.1;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+/*========================================================== Small Framework ======================================*/
+.bg-section {
+  background-color: var(--bg-section);
+}
+.transition {
+  transition: var(--main-transition);
+}
+.fs-16 {
+  font-size: 1rem;
+}
+.text-gray {
+  color: var(--color-text);
+}
+.text-ccc {
+  color: #ccc;
+}
+.lheight-16 {
+  line-height: 1.6;
+}
+.wspacing-2 {
+  word-spacing: 2px;
+}
+/*========================================================= Some Components ========================================*/
+.heading {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      right: -5%;
+      bottom: 10px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 106%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background-image: url(../images/dots.png);
+    }
+  }
+}
+/*=================================================== End Greneral Rules =======================================*/
+/*=================================================== Start Navbar =============================================*/
+#navbar {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2800, 00, 00, 100%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  .container {
+    h1 {
+      a.logo {
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+        font-weight: 800;
+        color: #fff;
+      }
+    }
+    .navbar-toggler {
+      &:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        background-image: var(--bs-navbar-toggler-icon-bg);
+      }
+    }
+    .navbar-collapse {
+      ul {
+        li {
+          width: fit-content;
+        }
+      }
+    }
+    .nav-underline .nav-link:focus,
+    .nav-underline .nav-link:hover {
+      border-bottom-color: transparent;
+    }
+    .nav-underline .nav-link:focus,
+    .nav-underline .nav-link.active {
+      border-bottom-color: currentColor;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .navbar-collapse {
+    ul {
+      background-color: #fff;
+      padding: 3rem 0;
+    }
+  }
+}
+/*=================================================== End Navbar =============================================*/
+/*=================================================== Start Header =============================================*/
+#home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  .container {
+    .header__content {
+      .job-title {
+        #typed-strings,
+        #element {
+          font-size: 1rem;
+        }
+      }
+      .typed-cursor {
+        animation: none;
+        font-size: 1.5rem;
+      }
+      .social-icons {
+        span {
+          height: 35px;
+          width: 35px;
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  #home {
+    .container {
+      .header__content {
+        .job-title {
+          #typed-strings,
+          #element {
+            font-size: 3rem;
+          }
+        }
+        .typed-cursor {
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
+}
+/*=================================================== End Header =============================================*/
+/*=================================================== Start Section About =============================================*/
+#about {
+  .container {
+    .about__image {
+      .img-inner {
+        text-align: right;
+        img {
+          max-width: 90%;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          width: 85%;
+          height: 85%;
+          left: 7%;
+          bottom: -7%;
+          background-image: url(../images/dots.png);
+        }
+      }
+    }
+    .about__info {
+      .about__info__heading {
+        h2 {
+          width: fit-content;
+          &::before {
+            content: "";
+            position: absolute;
+            right: -5%;
+            bottom: 8px;
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            background-color: #000;
+          }
+        }
+        span {
+          p {
+            color: #999;
+            letter-spacing: 2px;
+          }
+        }
+      }
+      .about__info__progress {
+        .progress {
+          --bs-progress-height: 1.5rem;
+          --bs-progress-bar-bg: #000;
+          height: var(--bs-progress-height);
+          background-color: var(--bs-progress-bg);
+        }
+      }
+      .about__info__links {
+        .btn-download {
+          --bs-btn-hover-color: #000;
+          --bs-btn-hover-bg: transparent;
+          --bs-btn-hover-border-color: #373b3e;
+          &:hover {
+            background-color: var(--bs-btn-hover-bg);
+            color: var(--bs-btn-hover-color);
+          }
+        }
+      }
+    }
+  }
+}
+/*=================================================== End Section About =============================================*/
+/*=================================================== Start Section Services =============================================*/
+#services {
+  .container {
+    .services__content {
+      .services__card {
+        span {
+          height: 70px;
+          width: 70px;
+          background-color: var(--bg-icons);
+        }
+        &:hover {
+          span {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+/*=================================================== End Section Services =============================================*/
+/*=================================================== Start Section Portfolio =============================================*/
+#portfolio {
+  .container {
+    .portfolio__content {
+      .portfolio__box {
+        .portfolio__caption {
+          position: absolute;
+          top: 5px;
+          bottom: 5px;
+          right: 5px;
+          left: 5px;
+          background-color: rgba(255, 255, 255, 0.95);
+          opacity: 0;
+          h6 {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            transition: var(--main-transition) 0.1s;
+          }
+          .figcaption__icons {
+            span {
+              height: 30px;
+              width: 30px;
+              background-color: #111;
+              cursor: pointer;
+              i {
+                color: #eee;
+              }
+              &:hover {
+                background-color: #fff;
+                border: 1px solid #000;
+                i {
+                  color: #000;
+                }
+              }
+            }
+          }
+          &:hover {
+            h6 {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+        &:hover {
+          .portfolio__caption {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .modals-container {
+      .modal {
+        background-color: rgba(0, 0, 0, 0.5);
+        --bs-modal-width: 600px;
+        .modal-dialog {
+          .modal-content {
+            .modal-header {
+              i {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        button {
+          &.btn-previous {
+            left: 2%;
+          }
+          &.btn-next {
+            right: 2%;
+          }
+          &:focus {
+            outline: none;
+            border: none;
+          }
+          i {
+            color: #e2e2e2;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*=================================================== End Section Portfolio =============================================*/
+/*=================================================== Start Section Testimonials =============================================*/
+#testimonials {
+  .container {
+    .testimonials__content {
+      .carousel-item-image {
+        width: 6rem;
+        height: 6rem;
+      }
+      .carousel-caption {
+        span {
+          font-size: 0.75rem;
+          color: #888;
+        }
+      }
+      .carousel-indicators {
+        button {
+          height: 10px;
+          width: 10px;
+          background-color: #d6d6d6;
+          &:focus {
+            background-color: #869791;
+          }
+        }
+      }
+    }
+  }
+}
+/*=================================================== End Section Testimonials =============================================*/
+/*=================================================== Start Section Statistics =============================================*/
+#statistics {
+  .container {
+    .statistics__card {
+      h5 {
+        font-size: 1.875rem;
+        font-weight: 900;
+      }
+    }
+  }
+}
+/*=================================================== End Section Statistics =============================================*/
+/*=================================================== Start Section Our Team =============================================*/
+#team {
+  .container {
+    .team__card {
+      .team__card__image {
+        &:hover {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .team__card__icons {
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        background-color: rgba(255, 255, 255, 0.95);
+        transform: rotateY(180deg) scale(0.4);
+        opacity: 0;
+        span {
+          height: 40px;
+          width: 40px;
+          cursor: pointer;
+          background-color: #111;
+          i {
+            font-size: 1.25rem;
+            color: #eee;
+          }
+          &:hover {
+            border: 1px solid #000;
+            background-color: #fff;
+            i {
+              color: #000;
+            }
+          }
+        }
+      }
+      &:hover {
+        .team__card__icons {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+    .card-body {
+      background-color: #5b5b5b;
+    }
+  }
+}
+/*=================================================== End Section Our Team =============================================*/
+/*=================================================== Start Section Contact Us =============================================*/
+#contact {
+  .container {
+    .contact__content {
+      .contact__box {
+        .box__icon {
+          height: 60px;
+          width: 60px;
+          background-color: var(--bg-icons);
+        }
+        &:hover {
+          .box__icon {
+            background-color: #000;
+            color: #fff;
+          }
+        }
+      }
+      .contact__form {
+        form {
+          input,
+          textarea {
+            background-color: var(--bg-icons);
+            &::placeholder {
+              text-transform: capitalize;
+            }
+          }
+          textarea {
+            resize: both;
+          }
+          .btn-submit {
+            font-size: 0.8125rem;
+            &:hover {
+              background-color: #fff;
+              color: #000;
+              border: 1px solid #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  #contact {
+    .container {
+      .contact__content {
+        width: 80%;
+      }
+    }
+  }
+}
+/*=================================================== End Section Contact Us =============================================*/
